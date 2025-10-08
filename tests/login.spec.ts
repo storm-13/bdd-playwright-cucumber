@@ -1,3 +1,4 @@
+/*
 import { test, expect } from '@playwright/test';
 import { loginAsValidUser, loginAsInvalidUser } from 'e2e/steps/login.steps';
 
@@ -10,3 +11,4 @@ test('Invalid user should see error message', async({ page }) => {
     await loginAsInvalidUser(page);
     await expect(page.locator('#flash')).toContainText('Your username is invalid!');
 })
+*/

@@ -14,8 +14,8 @@ export class TestWorld extends World {
   homePage!: HomePage;
   playwrightConf: PlaywrightTestConfig;
 
-  constructor(opts: IWorldOptions) {
-    super(opts);
+  constructor(options: IWorldOptions) {
+    super(options);
 
     this.playwrightConf = {
       use: {
@@ -40,6 +40,7 @@ export class TestWorld extends World {
     this.page = await this.context.newPage();
 
     this.homePage = new HomePage(this);
+    this.page = this.page;
 
     await this.page.goto(this.parameters.appUrl);
   }

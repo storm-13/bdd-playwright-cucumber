@@ -1,6 +1,8 @@
 import { After, AfterStep, Before, ITestCaseHookParameter } from '@cucumber/cucumber';
 import { TestWorld } from './world';
 
+//let browser: Browser;
+//let page: Page;
 /**
  * before each scenario - setup browser and context and new page
  */

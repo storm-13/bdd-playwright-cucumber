@@ -1,4 +1,4 @@
-Feature: Homepage Feature Testing
+    Feature: Homepage Feature Testing
 
     Example feature file
 

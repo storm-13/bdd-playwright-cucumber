@@ -22,13 +22,14 @@ const common = {
     'html:e2e/results/cucumber-report.html',
     '@cucumber/pretty-formatter',
   ],
+  
   requireModule: ['ts-node/register'],
   require: [path.join(__dirname, 'e2e/**/*.ts')],
   paths: [path.join(__dirname, 'e2e/features/')],
   timeout: 30000,
   worldParameters: {
     headless: false,
-    appUrl: process.env.APP_URL || 'https://google.com',
+    appUrl: process.env.APP_URL || 'https://the-internet.herokuapp.com',
 
   },
 };
