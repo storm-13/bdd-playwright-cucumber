@@ -1,23 +1,15 @@
-import { Page } from "@playwright/test";
+import { TestWorld } from "e2e/world"; 
 
 export class LoginPage {
-    //readonly page: Page;
-
-    constructor(private page: Page) {
-        //this.page = page;
-    }
+    constructor(private world: TestWorld) {}
     
-    async goto() {
-        await this.page.goto('https://the-internet.herokuapp.com/login');
+    async goto(): Promise<void> {
+        await this.world.page.goto(`${this.world.parameters.logUrl}`);
     }
 
     async login(username: string, password: string) {
-        await this.page.fill("#username", username);
-        await this.page.fill("#password", password);
-        await this.page.click("button[type='submit']");
+        await this.world.page.fill("#username", username);
+        await this.world.page.fill("#password", password);
+        await this.world.page.click("button[type='submit']");
     }
-/*
-    async isDashboardVisible(): Promise<boolean>{
-        return this.page.isVisible("#dashboard");
-   }*/
 }

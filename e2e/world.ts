@@ -1,6 +1,7 @@
 import { IWorldOptions, setDefaultTimeout, setWorldConstructor, World } from '@cucumber/cucumber';
 import { Browser, BrowserContext, chromium, Page, PlaywrightTestConfig } from '@playwright/test';
 import { HomePage } from './page_objects/homepage.po';
+import { LoginPage } from './page_objects/login.po';
 
 /** World.
  *  @class
@@ -12,6 +13,7 @@ export class TestWorld extends World {
   context!: BrowserContext;
   page!: Page;
   homePage!: HomePage;
+  loginPage!: LoginPage;
   playwrightConf: PlaywrightTestConfig;
 
   constructor(options: IWorldOptions) {
@@ -40,9 +42,11 @@ export class TestWorld extends World {
     this.page = await this.context.newPage();
 
     this.homePage = new HomePage(this);
-    this.page = this.page;
+    this.loginPage = new LoginPage(this);
+    //this.page = this.page;
 
     await this.page.goto(this.parameters.appUrl);
+    await this.page.goto(this.parameters.logUrl);
   }
 
   /**

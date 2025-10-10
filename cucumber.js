@@ -30,6 +30,7 @@ const common = {
   worldParameters: {
     headless: false,
     appUrl: process.env.APP_URL || 'https://the-internet.herokuapp.com',
+    logUrl: process.env.LOG_URL || 'https://the-internet.herokuapp.com/login',
 
   },
 };
